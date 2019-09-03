@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['/Users/njordy/Yandex.Disk.localized/Soup Manager/hou_packager/hou_packager.json'],
+a = Analysis(['/Users/njordy/Yandex.Disk.localized/Soup Manager/hou_packager/hou_packager.py'],
              pathex=['/Users/njordy'],
              binaries=[],
              datas=[],

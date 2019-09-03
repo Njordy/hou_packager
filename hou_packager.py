@@ -125,7 +125,7 @@ class DropZone(qt.QGroupBox):
             if new_path.is_dir():
                folder_content = new_path.iterdir()
                for iterated_file in folder_content:
-                  if iterated_file.name == "otls" or iterated_file.name == "scripts" or iterated_file.name == "toolbar":
+                  if iterated_file.name == "otls" or iterated_file.name == "scripts" or iterated_file.name == "hdas" or iterated_file.name == "toolbar":
                      self.final_path = new_path
                      self.add_new = True
                if new_path.name == "otls":

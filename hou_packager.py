@@ -4,15 +4,16 @@ import PySide2.QtWidgets as qt
 import PySide2.QtCore as qtcore
 
 def get_root_dir():
-   if getattr(sys, "frozen", False):
-      application_path = Path(sys.executable).parent.abspath()
+   if (os.name == "posix" or os.name == "Darwin"):
+      save_path = Path("~").expanduser()
+      print(save_path)
    else:
-      application_path = __file__
-   return application_path
+      save_path = Path().home().joinpath("documents") #Path.expanduser("~") / "documents"
+   return save_path
 
 class Settings(object):
     def __init__(self):
-       self.__configuration_path = Path(get_root_dir()).parent / "hou_packager.json"
+       self.__configuration_path = Path(get_root_dir()) / "hou_packager.json"
        self.__packages_path = Path()
 
        #loading of config
@@ -209,7 +210,7 @@ class Window(qt.QMainWindow):
       self.intro_text = "Seems like you are using this application for a first time. Please, specify the Houdini config folder where you have ""houdini.env"" file."
 
       if (os.name == "posix" or os.name == "Darwin"):
-         get_path = Path().home().joinpath("Library/Preferences/houdini/")
+         get_path = Path().home().joinpath("Library/Preferences/houdini/") #Path("~").expanduser()
       else:
          get_path = Path().home().joinpath("documents") #Path.expanduser("~") / "documents"
 
@@ -251,6 +252,9 @@ class Window(qt.QMainWindow):
 
 if __name__ == "__main__":
    app = qt.QApplication([])
+   if getattr(sys, "frozen", False):
+      qt.QApplication.addLibraryPath(sys._MEIPASS)
+
    window = Window()
 
    packages_path = Settings().give_path()

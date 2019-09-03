@@ -24,3 +24,7 @@ Then you open the application for the first time you will be asked to specify th
 
 This [Houdini Package](http://www.sidefx.com/docs/houdini/ref/plugins.html) system is basically just a JSON file wilth a few variables. hou_packager helps you to skip the manial job of creating a file, and writing a path to an HDA folder by yourself. You can just drop beforementioned foler into th dropzone of the application and it's done. 
 The folder *must* obey the houdini structure: `[folder name]/[otls]/*` or it won't work.
+
+## Download
+
+If you ain't a big on compiling it yourself, or interpreting via pythinw... well, take it from [here](https://yadi.sk/d/635a92r-bAxWbg), buddy. If you are a linux user, you have compiled it by now :)

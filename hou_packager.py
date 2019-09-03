@@ -6,14 +6,13 @@ import PySide2.QtCore as qtcore
 def get_root_dir():
    if (os.name == "posix" or os.name == "Darwin"):
       save_path = Path("~").expanduser()
-      print(save_path)
    else:
       save_path = Path().home().joinpath("documents") #Path.expanduser("~") / "documents"
-   return save_path
+   return save_path / "hou_packager.json"
 
 class Settings(object):
     def __init__(self):
-       self.__configuration_path = Path(get_root_dir()) / "hou_packager.json"
+       self.__configuration_path = get_root_dir()
        self.__packages_path = Path()
 
        #loading of config
@@ -22,7 +21,6 @@ class Settings(object):
              data = json.load(f)
              self.__packages_path = Path(data["cfg_path"])
        else:
-          #self.__configuration_path.touch()
           false_dir = True
           while false_dir:
             self.__packages_path = self.__request_dir__() ##gettting that folder from user

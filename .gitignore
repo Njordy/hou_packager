@@ -5,8 +5,8 @@
 
 # User-specific files
 
-*.DS_Store
-*.vscode
+.DS_Store
+.vscode
 *.rsuser
 *.suo
 *.user

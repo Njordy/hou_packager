@@ -163,11 +163,12 @@ class Entry(qt.QWidget):
       self.o_enabled = qt.QCheckBox()
       if enabled:
          self.o_enabled.toggle()
-      self.o_name = qt.QLabel(name)
+
+      self.o_name = qt.QLabel("  " + name)
       self.o_delete = qt.QPushButton("x")
-      self.layout.addWidget(self.o_enabled, 0, 0)
-      self.layout.addWidget(self.o_name, 1, 1)
-      self.layout.addWidget(self.o_delete, 0)
+      self.layout.addWidget(self.o_enabled, 0, qtcore.Qt.AlignCenter)
+      self.layout.addWidget(self.o_name, 1, qtcore.Qt.AlignLeft)
+      self.layout.addWidget(self.o_delete,  0, qtcore.Qt.AlignRight)
 
       self.layout.setContentsMargins(10, 0, 10, 0)
 

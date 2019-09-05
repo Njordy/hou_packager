@@ -27,4 +27,4 @@ The folder *must* obey the houdini structure: `[folder name]/[otls]/*` or it won
 
 ## Download
 
-If you ain't a big on compiling it yourself, or interpreting via pythonw... well, take it from [here](https://yadi.sk/d/635a92r-bAxWbg), buddy. If you are a linux user, you have compiled it by now :)
+If you ain't a big on compiling it yourself, or interpreting via pythonw... well, take it from "Releases" page above, buddy. If you are a linux user, you have compiled it by now :)
